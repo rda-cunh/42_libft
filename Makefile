@@ -1,21 +1,34 @@
-	/* insert 42 header */
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/10/09 17:53:40 by rda-cunh          #+#    #+#              #
+#    Updated: 2023/10/12 19:37:59 by rda-cunh         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = libft.a
-CC = gcc
+CFILES = $(wildcard ft_*.c)
+OBJS = $(CFILES:.c=.o)
+CC = cc 
 CFLAGS = -Wall -Wextra -Werror
-OBJS = ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o
+RM = rm -f
+AR = ar -rc
+NAME = libft.a
 
-all: $(OBJS)
-	cc main.c $(OBJS)
-
-%.o: %.c
-	cc -c $<
+all: $(NAME)
+	
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $^
 
 clean:
-	rm -rf $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	$(RM) $(NAME)
 
-re: fclean
-	$(MAKE) all
+re: fclean all
+
+.PHONY: all clean fclean re
