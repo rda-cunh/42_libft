@@ -6,7 +6,7 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:13:25 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/16 19:23:09 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/10/17 19:26:15 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t len)
 {
-	unsigned char *p;
+	unsigned char	*p;
 
 	p = (unsigned char *)s;
 	while (len > 0) 
@@ -22,23 +22,25 @@ void	*ft_memset(void *s, int c, size_t len)
 		*p = (unsigned char)c;
 		p++;
 		len--;
-	}	
-	return s; 
+	}
+	return (s); 
 }
 /*
 #include <stdio.h>
+#include <string.h>
+
+int main(void)
 {
-	char dest[] = "hello World";
-	int c = '$';
-	size_t len = 5;
+    char s1[] = "Test string";
+    char s2[] = "Test string";
 
+    printf("Original string: %s\n", s1);
+    
+    ft_memset(s1, '$', 4);
+    memset(s2, '$', 4);
 
-	printf("My function before = %s\n",dest);
-	printf("My function gives = %s\n", ft_memset(dest, c, len);
+    printf("Modified string using ft_memset: %s\n", s1);
+    printf("Modified string using memset: %s\n", s2);
 
-	chat dest[t] = "Hello World";
-
-	printf("Original function before = %s\n", dest);	
-	printf("Original function gives = %s\n", strn(s, c, );
-	return (0);
+    return (0);
 }*/
