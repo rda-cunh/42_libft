@@ -22,7 +22,7 @@ void	*memcpy(void *dst, const void *src, size_t len)
 	d = (char *)dst;
 	s = (char *)src;
 	if (!dst && !src)
-		return (dest);
+		return (dst);
 	while (i < n)
 	{
 		d[i] = s[i];
@@ -31,10 +31,17 @@ void	*memcpy(void *dst, const void *src, size_t len)
 	return (dst);	
 }
 
-/*int main()
+#include(stdio.h)
+
+int main(void)
 {
-	char	str[] = "Foste mesmo copiado.";
-	char	dest[18];
-	ft_putstr_fd(ft_memcpy(dest, str, 18), 1);
-	ft_putchar_fd('\n', 1);
-}*/
+	char	src1[] = "Test string.";
+	char	dst1[12];
+
+	char	src2[] = "Test string.";
+	char	dst2[12];
+
+	printf("Destiny string using ft_memcpy: %s\n", ft_memcpy(dst1, src1, 12));
+    printf("Destiny string using memcpy: %s\n", memcpy(dst2, src2, 12));
+	return (0);
+}
