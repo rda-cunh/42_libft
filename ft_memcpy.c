@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:34:34 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/19 18:22:02 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:23:41 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	char	*d;
-	char	*s;
+	unsigned char	*dtemp;
+	unsigned char	*stemp;
 
-	i = 0;
-	d = (char *)dst;
-	s = (char *)src;
-	if (!dst && !src)
+	dtemp = (unsigned char *)dst;
+	stemp = (unsigned char *)src;
+	if (!dtemp && !stemp)
 		return (dst);
-	while (i < len)
+	while (len > 0)
 	{
-		d[i] = s[i];
-		i++;
+		*dtemp = *stemp;
+		dtemp++;
+		stemp++;
+		len--;
 	}
 	return (dst);
 }

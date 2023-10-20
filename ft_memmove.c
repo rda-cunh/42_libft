@@ -6,41 +6,24 @@
 /*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:34:34 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/19 19:43:59 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:39:35 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	char	*d;
-	char	*s;
-	char	*temp;
+	unsigned char	*dtemp;
+	unsigned char	*stemp;
 
-	i = 0;
-	d = (char *)dst;
-	s = (char *)src;
-
-	if (!dst && !src)
-		return (dst);
-
-	temp = malloc(len);
-
-	while (i < len)
-        {
-                temp[i] = s[i];
-                i++;
-        }
-	i = 0;
-	while (i < len)
-	{
-		d[i] = temp[i];
-		i++;
-	}
-	free(temp);
+	dtemp = (unsigned char *)dst;
+	stemp = (unsigned char *)src;
+	if (dst < src)
+		return (ft_memcpy(dst, src, len));
+	if (dst > src)
+		while (len--)
+			dtemp[len] = stemp[len];
 	return (dst);
 }
 /*
