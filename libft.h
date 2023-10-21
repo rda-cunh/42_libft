@@ -14,7 +14,9 @@
 # define LIBFT_H
 
 # include <string.h>
-//don't forget to verify at the end that all the needed libraries are here//
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
 
 //LIBC FUNCTIONS//
 int		ft_isalpha(int c);

@@ -12,15 +12,30 @@
 
 #include "libft.h"
 
-size_t  ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    int i;
+	size_t	i;
 
-    i = 0;
-    while (src != '\0' && (i < size-1))
-    {
-        dst[i] = srt[i];
-        i++;
-    }
-    return (ft_strlen(src)) 
+	i = 0;
+	if (!size)
+		return (ft_strlen(src));
+	while (src[i] && (i < (size - 1)))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
+/*#include <stdio.h>
+
+int	main(void)
+{
+	char src[] = "Where's Wally";
+	char dst[] = "Alice in Wonderland";
+	size_t	size = 13;
+
+	printf("src string: %s\nsrc tring size:%ld\ndst string: %s\n", src,
+	 ft_strlcpy(dst, src, size), dst);
+	return (0);
+}*/
