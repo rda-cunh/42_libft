@@ -11,3 +11,17 @@
 /* ************************************************************************** */
 
 
+#include "libft.h"
+
+size_t  ft_strlcpy(char *dst, const char *src, size_t size)
+{
+    int i;
+
+    i = 0;
+    while (src != '\0' && (i < size-1))
+    {
+        dst[i] = srt[i];
+        i++;
+    }
+    return (ft_strlen(src)) 
+}
