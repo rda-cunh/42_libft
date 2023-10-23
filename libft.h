@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:54:20 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/19 19:42:04 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:04:10 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_bzero(void *b, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 //ADITIONAL FUNCTIONS//
 
