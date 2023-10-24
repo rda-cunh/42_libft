@@ -15,28 +15,34 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t i;
-	size_t last_elem;
-	size_t dst_len;
+	size_t len;
 	
 	i = 0;
-	last_elem = dstsize -1;
-	dst_len = ft_strlen(dst);
+	len = 0;
 	
-	if (dstsize > 0)
+	while (dest[len] && len < dstsize)
+		len++;
+	i = len;
+	while (src[len - i] && (len + 1) < dstsize)
 	{
-		while (src[i] && (i < last_elem))
-		{
-			dst[dst_len + i] = src[i];
-			i++;
-		}
-		if (i == last_elem)
-		{
-			dst[dst_len + i] = '\0';
-		}
-		else 
-		{
-			dst[i -1] = '\0';
-		}
+		dest[len] = src[len - i];
+		len++;
 	}
-	return (ft_strlen(src));
+	if (i < dstsize)
+		dest[len] = '\0';
+	return (i + ft_strlen(src));
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+	char dst[] = "My name is Mario";
+	char src[] = ", Super Mario";
+	int n = 7; 
+
+	printf("original strncat = %s\n", strlcat(dst, src, n));
+//	printf("mine strncat = %s\n", ft_strlcat(dst, src, n));	
+	return (0);
+}*/
