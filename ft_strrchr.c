@@ -6,7 +6,7 @@
 /*   By: rmendes <rmendes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:39:36 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/29 00:31:31 by rmendes          ###   ########.fr       */
+/*   Updated: 2023/10/29 13:47:12 by rmendes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,20 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	altc;
 	char	*alts;
+	size_t	i;
 
 	altc = c;
 	alts = (char *)s;
-	while (*alts != '\0')
-	{
-		if (*alts == altc)
-			return (alts);
-		alts++;
-	}
+	i = ft_strlen(alts);
 	if (altc == 0)
+		return (alts + i);
+	while (i != 0)
+	{
+		if (alts[i] == altc)
+			return (alts + i);
+		i--;
+	}
+	if (s[0] == altc)
 		return (alts);
 	return (NULL);
 }
@@ -36,9 +40,8 @@ char	*ft_strrchr(const char *s, int c)
 int	main(void)
 {
 	char str[] = "Vai ser um teste";
-	char c = 't';
+	char c = 'V';
 
 	printf("My function: %s\n", ft_strrchr(str, c));
 	printf("My function: %s\n", strrchr(str, c));
-}
-*/
+}*/

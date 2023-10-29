@@ -1,44 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmendes <rmendes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 18:39:36 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/29 13:25:03 by rmendes          ###   ########.fr       */
+/*   Created: 2023/10/29 13:57:10 by rmendes           #+#    #+#             */
+/*   Updated: 2023/10/29 14:19:11 by rmendes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	altc;
-	char	*alts;
+	unsigned int	i;
 
-	altc = c;
-	alts = (char *)s;
-	while (*alts != '\0')
+	i = 0;
+	while (i < n - 1)
 	{
-		if (*alts == altc)
-			return (alts);
-		alts++;
+		if (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		{
+			i++;
+		}
+		else
+		{
+			return (s1[i] - s2[i]);
+		}
 	}
-	if (altc == 0)
-		return (alts);
-	return (NULL);
+	return (s1[i] - s2[i]);
 }
-/*
+
 #include <stdio.h>
 #include <string.h>
 
-int	main(void)
+int main(void)
 {
-	char str[] = "Vai ser um teste";
-	char c = 't';
-
-	printf("My function: %s\n", ft_strchr(str, c));
-	printf("My function: %s\n", strchr(str, c));
+        char s1[] = "abcdef";
+        char s2[] = "abc\375xx";
+	int n = 6;
+	
+	printf("my function = %d\n", ft_strncmp(s1, s2, n));   
+	printf("original function = %d\n", strncmp(s1, s2, n));     
+         return (0);
 }
-*/
