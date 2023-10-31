@@ -6,7 +6,7 @@
 /*   By: rmendes <rmendes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:15:00 by rmendes           #+#    #+#             */
-/*   Updated: 2023/10/31 00:25:33 by rmendes          ###   ########.fr       */
+/*   Updated: 2023/10/31 00:28:59 by rmendes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		
+		if ()
 	}
+	return (0);
 }
