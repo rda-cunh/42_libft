@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmendes <rmendes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 18:29:19 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/31 00:09:44 by rmendes          ###   ########.fr       */
+/*   Created: 2023/10/31 00:15:00 by rmendes           #+#    #+#             */
+/*   Updated: 2023/10/31 00:25:33 by rmendes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*alts;
+	unsigned char	*alts1;
+	unsigned char	*alts2;
 	size_t			i;
 
-	alts = (unsigned char *)s;
+	alts1 = (unsigned char *)s1;
+	alts2 = (unsigned char *)s2;
 	i = 0;
-	while (n > i)
+	while (i < n)
 	{
-		if (alts[i] == (unsigned char)c)
-			return (&alts[i]);
-		i++;
+		
 	}
-	return (0);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main(void)
-{
-        char s1[] = "abcdef";
-        int c = 'c'; 
-		size_t n = 6;
-	
-	printf("my function = %p\n", ft_memchr(s1, c, n));   
-	printf("original function = %p\n", memchr(s1, c, n));     
-    return (0);
-}*/
