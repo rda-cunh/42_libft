@@ -6,7 +6,7 @@
 /*   By: rmendes <rmendes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:54:20 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/31 00:11:10 by rmendes          ###   ########.fr       */
+/*   Updated: 2023/10/31 22:03:52 by rmendes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 //ADITIONAL FUNCTIONS//
 
