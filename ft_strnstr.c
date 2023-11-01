@@ -6,27 +6,31 @@
 /*   By: rmendes <rmendes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 22:31:28 by rmendes           #+#    #+#             */
-/*   Updated: 2023/10/31 23:39:04 by rmendes          ###   ########.fr       */
+/*   Updated: 2023/11/01 12:16:15 by rmendes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*big2;
-	char	*little2;
 	size_t	i;
 	size_t	j;
-	
-	big2 = (char *)big;
-	little2 = (char *)little;
-	i = 0;
-	j = 0;
-	if (ft_strlen(little) == 0)
-		return ((char *)big);
-	while (i < len && i + )
 
+	i = 0;
+	if (little[0] == '\0')
+		return ((char *)big);
+	while (i < len && big[i])
+	{
+		j = 0;
+		while (big[i + j] == little[j] && little[j] != '\0' && i + j < len)
+		{
+			++j;
+			if (little[j] == '\0')
+				return ((char *)&big[i]);
+		}
+		++i;
+	}
 	return (NULL);
 }
 /*
@@ -35,10 +39,10 @@ char	*strnstr(const char *big, const char *little, size_t len)
 
 int main(void)
 {
-	char str[] = "My name is Mario";
-	char to_find[] = "is";
+	char	big[] = "My name is Mario";
+	char	little[] = "is";
+	size_t	len = strlen(big);
 
-//	printf("strstr = %s\n", strstr(str, to_find));
-	printf("ft_strstr = %s\n", ft_strstr(str, to_find));	
+	printf("ft_strstr = %s\n", ft_strnstr(big, little, len));
 	return (0);
 }*/
