@@ -1,45 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmendes <rmendes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 09:22:22 by rmendes           #+#    #+#             */
-/*   Updated: 2023/11/02 11:45:42 by rmendes          ###   ########.fr       */
+/*   Created: 2023/11/02 11:49:47 by rmendes           #+#    #+#             */
+/*   Updated: 2023/11/02 12:45:26 by rmendes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*sub;
-	size_t	sub_size;
+	char	*str;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	if (s == NULL)
+	if (!s1 || !s2)
 		return (NULL);
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
-	sub_size = ft_strlen(s + start);
-	if (sub_size < len)
-		len = sub_size;
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (sub == NULL)
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (!str)
 		return (NULL);
-	ft_strlcpy(sub, s + start, len + 1);
-	return (sub);
+	ft_memcpy(str, s1, s1_len);
+	ft_memcpy(str + s1_len, s2, s2_len);
+	str[s1_len + s2_len] = '\0';
+	return (str);
 }
 /*
 #include <stdio.h>
 #include <string.h>
 
-int	main(void)
+int main(void)
 {
-	char				s[] = "Hello World";
-	unsigned int		start = 7;
-	size_t				len = 6; 
+	char s1[] = "My name is Mario";
+	char s2[] = ", Super Mario"; 
 
-	printf("substr: %s\n", ft_substr(s, start, len));
-	return (0);	
+	printf("%s\n", ft_strjoin(s1, s2));	
+	return (0);
 }*/
