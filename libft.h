@@ -6,7 +6,7 @@
 /*   By: rmendes <rmendes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:54:20 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/01 23:41:46 by rmendes          ###   ########.fr       */
+/*   Updated: 2023/11/02 09:43:46 by rmendes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 
 //ADITIONAL FUNCTIONS//
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 //BONUS FUNCTIONS//
 typedef struct s_list
