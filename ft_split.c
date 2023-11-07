@@ -6,7 +6,7 @@
 /*   By: rmendes <rmendes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:46:04 by rmendes           #+#    #+#             */
-/*   Updated: 2023/11/06 00:34:57 by rmendes          ###   ########.fr       */
+/*   Updated: 2023/11/07 01:11:20 by rmendes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ int	ft_word_count(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c && (s[i + 1] != c || s[i + 1] == '\0'))
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
 			wordcount++;
-		i++;
+		while (s[i] && (s[i] != c))
+			i++;
 	}
 	return (wordcount);
 }
@@ -32,7 +35,7 @@ void	ft_allocate(char **tab, char const *s, char sep)
 {
 	char		**tab1;
 	char const	*tmp;
-	
+
 	tmp = s;
 	tab1 = tab;
 	while (*tmp)
@@ -56,11 +59,11 @@ char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	int		size;
-	
+
 	if (!s)
-		return (NULL); 
+		return (NULL);
 	size = ft_word_count(s, c);
-	str = (char **)malloc (sizeof(char) * (size + 1));
+	str = (char **)malloc (sizeof(char *) * (size + 1));
 	if (!str)
 		return (NULL);
 	ft_allocate(str, s, c);
@@ -72,7 +75,7 @@ char	**ft_split(char const *s, char c)
 int	main(void);
 {
 	char	s[] = "Lorem ipsum dolor sit amet";
-	char	c = " ";
+	char	c = ' ';
 	i = 0;
 
 	while (i < 5)
