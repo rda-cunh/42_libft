@@ -6,7 +6,7 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 00:26:51 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/10 00:44:59 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/10 19:28:25 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (!s)
+		return ;
+	while (s[i])
 	{
-		while (s[i])
-		{
-			f(i, s + i);
-			i++;
-		}
+		f(i, s + i);
+		i++;
 	}
 }

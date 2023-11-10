@@ -6,7 +6,7 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 01:03:10 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/10 01:06:22 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/10 19:34:34 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, &s, ft_strlen(s));
-	write(fd, "\0", 1);
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
