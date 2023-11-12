@@ -6,7 +6,7 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:54:20 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/10 01:15:06 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/12 01:04:19 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int c, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 //BONUS FUNCTIONS//
 typedef struct s_list
