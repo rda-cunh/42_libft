@@ -6,7 +6,7 @@
 #    By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 17:53:40 by rda-cunh          #+#    #+#              #
-#    Updated: 2023/10/12 19:37:59 by rda-cunh         ###   ########.fr        #
+#    Updated: 2023/11/12 01:53:06 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ NAME = libft.a
 all: $(NAME)
 	
 $(NAME): $(OBJS)
+	$(AR) $(NAME) $^
+
+bonus: $(OBJS)
 	$(AR) $(NAME) $^
 
 clean:
