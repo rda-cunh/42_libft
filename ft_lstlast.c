@@ -6,7 +6,7 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:12:19 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/13 19:34:47 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:32:46 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ t_list	*ft_lstlast(t_list *lst)
 	{
 		lst = lst -> next;
 	}
-	return (lst);
+	return (lst); 
 }
