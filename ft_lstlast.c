@@ -6,17 +6,19 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:12:19 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/14 18:32:46 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:37:14 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 t_list	*ft_lstlast(t_list *lst)
 {
-	if	(lst == NULL)
+	if (lst == NULL)
 		return (NULL);
 	while (lst -> next)
 	{
 		lst = lst -> next;
 	}
-	return (lst); 
+	return (lst);
 }
