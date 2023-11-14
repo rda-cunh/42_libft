@@ -12,13 +12,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	int size;
-
-	size = ft_lstsize(lst);
-	while (lst != NULL)
+	if	(lst == NULL)
+		return (NULL);
+	while (lst -> next)
 	{
-		if (lst == size)
-			return (lst -> data);
+		lst = lst -> next;
 	}
-	assert (0);
+	return (lst);
 }
