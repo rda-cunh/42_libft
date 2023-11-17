@@ -6,13 +6,13 @@
 /*   By: rda-cunh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 00:16:55 by rda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/17 00:22:13 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/17 18:20:21 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lsriter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst != NULL)
 	{
